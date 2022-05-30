@@ -1,0 +1,722 @@
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest
+$ ll
+total 0
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest
+$ ls-la
+bash: ls-la: command not found
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest
+$ la-lA
+bash: la-lA: command not found
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest
+$ la -lA
+bash: la: command not found
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest
+$ ls -lA
+total 0
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest
+$ ls -l|less
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest
+$
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest
+$ git init
+Initialized empty Git repository in C:/Users/flat/Desktop/gittest/.git/
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ mkdir WeChat
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ ll
+total 0
+drwxr-xr-x 1 flat 197609 0 May 29 19:40 WeChat/
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ ll -lA
+total 4
+drwxr-xr-x 1 flat 197609 0 May 29 19:40 .git/
+drwxr-xr-x 1 flat 197609 0 May 29 19:40 WeChat/
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ pwd
+/c/Users/flat/Desktop/gittest
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ ls -lA
+total 4
+drwxr-xr-x 1 flat 197609 0 May 29 19:40 .git/
+drwxr-xr-x 1 flat 197609 0 May 29 19:40 WeChat/
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ ll .git/
+total 7
+-rw-r--r-- 1 flat 197609  23 May 29 19:40 HEAD
+-rw-r--r-- 1 flat 197609 130 May 29 19:40 config
+-rw-r--r-- 1 flat 197609  73 May 29 19:40 description
+drwxr-xr-x 1 flat 197609   0 May 29 19:40 hooks/
+drwxr-xr-x 1 flat 197609   0 May 29 19:40 info/
+drwxr-xr-x 1 flat 197609   0 May 29 19:40 objects/
+drwxr-xr-x 1 flat 197609   0 May 29 19:40 refs/
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git config user.name flat
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git config user.email 822836401@qq.com
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat .git/config
+[core]
+        repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = true
+        symlinks = false
+        ignorecase = true
+[user]
+        name = flat
+        email = 822836401@qq.com
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        good.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git add good.txt
+warning: LF will be replaced by CRLF in good.txt.
+The file will have its original line endings in your working directory
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   good.txt
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git rm --cached good.txt
+rm 'good.txt'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        good.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git add good.txt
+warning: LF will be replaced by CRLF in good.txt.
+The file will have its original line endings in your working directory
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   good.txt
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git commit good.txt
+warning: LF will be replaced by CRLF in good.txt.
+The file will have its original line endings in your working directory
+Aborting commit due to empty commit message.
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   good.txt
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git commit good.txt -m 'init'
+warning: LF will be replaced by CRLF in good.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) 60e6ddb] init
+ 1 file changed, 4 insertions(+)
+ create mode 100644 good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+aa
+fffs
+vfddv
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   good.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git add good.txt
+warning: LF will be replaced by CRLF in good.txt.
+The file will have its original line endings in your working directory
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git commit good.txt -m 'two edit'
+warning: LF will be replaced by CRLF in good.txt.
+The file will have its original line endings in your working directory
+[master e72d436] two edit
+ 1 file changed, 1 insertion(+)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git log
+commit e72d436817b2c4d12029ab1739c7fb3252934639 (HEAD -> master)
+Author: flat <822836401@qq.com>
+Date:   Sun May 29 20:34:06 2022 +0800
+
+    two edit
+
+commit 60e6ddb3e6604f1ffdd62b21f622a301b0a44458
+Author: flat <822836401@qq.com>
+Date:   Sun May 29 20:24:04 2022 +0800
+
+    init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git log --pretty=oneline
+e72d436817b2c4d12029ab1739c7fb3252934639 (HEAD -> master) two edit
+60e6ddb3e6604f1ffdd62b21f622a301b0a44458 init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git log --oneline
+e72d436 (HEAD -> master) two edit
+60e6ddb init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reflog
+e72d436 (HEAD -> master) HEAD@{0}: commit: two edit
+60e6ddb HEAD@{1}: commit (initial): init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reflog
+e72d436 (HEAD -> master) HEAD@{0}: commit: two edit
+60e6ddb HEAD@{1}: commit (initial): init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard ^C
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard 60e6ddb
+HEAD is now at 60e6ddb init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reflog
+60e6ddb (HEAD -> master) HEAD@{0}: reset: moving to 60e6ddb
+e72d436 HEAD@{1}: commit: two edit
+60e6ddb (HEAD -> master) HEAD@{2}: commit (initial): init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+aa
+fffs
+vfddv
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --e72d436
+error: unknown option `e72d436'
+usage: git reset [--mixed | --soft | --hard | --merge | --keep] [-q] [<commit>]
+   or: git reset [-q] [<tree-ish>] [--] <pathspec>...
+   or: git reset [-q] [--pathspec-from-file [--pathspec-file-nul]] [<tree-ish>]
+   or: git reset --patch [<tree-ish>] [--] [<pathspec>...]
+   or: DEPRECATED: git reset [-q] [--stdin [-z]] [<tree-ish>]
+
+    -q, --quiet           be quiet, only report errors
+    --mixed               reset HEAD and index
+    --soft                reset only HEAD
+    --hard                reset HEAD, index and working tree
+    --merge               reset HEAD, index and working tree
+    --keep                reset HEAD but keep local changes
+    --recurse-submodules[=<reset>]
+                          control recursive updating of submodules
+    -p, --patch           select hunks interactively
+    -N, --intent-to-add   record only the fact that removed paths will be added later
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+    -z                    DEPRECATED (use --pathspec-file-nul instead): paths are separated with NUL character
+    --stdin               DEPRECATED (use --pathspec-from-file=- instead): read paths from <stdin>
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cls
+bash: cls: command not found
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard e72d436
+HEAD is now at e72d436 two edit
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+aa
+fffs
+vfddv
+uuuuet numu
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reflog
+e72d436 (HEAD -> master) HEAD@{0}: reset: moving to e72d436
+60e6ddb HEAD@{1}: reset: moving to 60e6ddb
+e72d436 (HEAD -> master) HEAD@{2}: commit: two edit
+60e6ddb HEAD@{3}: commit (initial): init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard HEAD^^^
+fatal: ambiguous argument 'HEAD^^^': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard HEAD^
+HEAD is now at 60e6ddb init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard HEAD^
+fatal: ambiguous argument 'HEAD^': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cls
+bash: cls: command not found
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reflog
+60e6ddb (HEAD -> master) HEAD@{0}: reset: moving to HEAD^
+e72d436 HEAD@{1}: reset: moving to e72d436
+60e6ddb (HEAD -> master) HEAD@{2}: reset: moving to 60e6ddb
+e72d436 HEAD@{3}: commit: two edit
+60e6ddb (HEAD -> master) HEAD@{4}: commit (initial): init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+aa
+fffs
+vfddv
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard HEAD~
+fatal: ambiguous argument 'HEAD~': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git log --online
+fatal: unrecognized argument: --online
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git log --oneline
+60e6ddb (HEAD -> master) init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git log --oneline
+60e6ddb (HEAD -> master) init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reflog
+60e6ddb (HEAD -> master) HEAD@{0}: reset: moving to HEAD^
+e72d436 HEAD@{1}: reset: moving to e72d436
+60e6ddb (HEAD -> master) HEAD@{2}: reset: moving to 60e6ddb
+e72d436 HEAD@{3}: commit: two edit
+60e6ddb (HEAD -> master) HEAD@{4}: commit (initial): init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard HEAD~2
+fatal: ambiguous argument 'HEAD~2': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard HEAD~
+fatal: ambiguous argument 'HEAD~': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard HEAD^2
+fatal: ambiguous argument 'HEAD^2': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reflog
+60e6ddb (HEAD -> master) HEAD@{0}: reset: moving to HEAD^
+e72d436 HEAD@{1}: reset: moving to e72d436
+60e6ddb (HEAD -> master) HEAD@{2}: reset: moving to 60e6ddb
+e72d436 HEAD@{3}: commit: two edit
+60e6ddb (HEAD -> master) HEAD@{4}: commit (initial): init
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+aa
+fffs
+vfddv
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard 60e6ddb
+HEAD is now at 60e6ddb init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+aa
+fffs
+vfddv
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard e72d436
+HEAD is now at e72d436 two edit
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+aa
+fffs
+vfddv
+uuuuet numu
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard 60e6ddb
+HEAD is now at 60e6ddb init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git add good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git commit -m "three" good.txt
+[master f00c2ff] three
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git add good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git commit -m 'm' good.txt
+[master 516c737] m
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git add good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git commit -m 't' good.txt
+[master ca68a8b] t
+ 1 file changed, 1 insertion(+)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reflog
+ca68a8b (HEAD -> master) HEAD@{0}: commit: t
+516c737 HEAD@{1}: commit: m
+f00c2ff HEAD@{2}: commit: three
+60e6ddb HEAD@{3}: reset: moving to 60e6ddb
+e72d436 HEAD@{4}: reset: moving to e72d436
+60e6ddb HEAD@{5}: reset: moving to 60e6ddb
+60e6ddb HEAD@{6}: reset: moving to HEAD^
+e72d436 HEAD@{7}: reset: moving to e72d436
+60e6ddb HEAD@{8}: reset: moving to 60e6ddb
+e72d436 HEAD@{9}: commit: two edit
+60e6ddb HEAD@{10}: commit (initial): init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+aa
+fffs
+vfddv
+kkkki
+llll
+tttt
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard 60e6ddb
+HEAD is now at 60e6ddb init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --mixed 60e6ddb
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ m
+bash: m: command not found
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+aa
+fffs
+vfddv
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git log --oneline
+60e6ddb (HEAD -> master) init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reflog
+60e6ddb (HEAD -> master) HEAD@{0}: reset: moving to 60e6ddb
+60e6ddb (HEAD -> master) HEAD@{1}: reset: moving to 60e6ddb
+ca68a8b HEAD@{2}: commit: t
+516c737 HEAD@{3}: commit: m
+f00c2ff HEAD@{4}: commit: three
+60e6ddb (HEAD -> master) HEAD@{5}: reset: moving to 60e6ddb
+e72d436 HEAD@{6}: reset: moving to e72d436
+60e6ddb (HEAD -> master) HEAD@{7}: reset: moving to 60e6ddb
+60e6ddb (HEAD -> master) HEAD@{8}: reset: moving to HEAD^
+e72d436 HEAD@{9}: reset: moving to e72d436
+60e6ddb (HEAD -> master) HEAD@{10}: reset: moving to 60e6ddb
+e72d436 HEAD@{11}: commit: two edit
+60e6ddb (HEAD -> master) HEAD@{12}: commit (initial): init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard HEAD
+HEAD is now at 60e6ddb init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reset --hard ca68a8b
+HEAD is now at ca68a8b t
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+aa
+fffs
+vfddv
+kkkki
+llll
+tttt
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reflog
+ca68a8b (HEAD -> master) HEAD@{0}: reset: moving to ca68a8b
+60e6ddb HEAD@{1}: reset: moving to HEAD
+60e6ddb HEAD@{2}: reset: moving to 60e6ddb
+60e6ddb HEAD@{3}: reset: moving to 60e6ddb
+ca68a8b (HEAD -> master) HEAD@{4}: commit: t
+516c737 HEAD@{5}: commit: m
+f00c2ff HEAD@{6}: commit: three
+60e6ddb HEAD@{7}: reset: moving to 60e6ddb
+e72d436 HEAD@{8}: reset: moving to e72d436
+60e6ddb HEAD@{9}: reset: moving to 60e6ddb
+60e6ddb HEAD@{10}: reset: moving to HEAD^
+e72d436 HEAD@{11}: reset: moving to e72d436
+60e6ddb HEAD@{12}: reset: moving to 60e6ddb
+e72d436 HEAD@{13}: commit: two edit
+60e6ddb HEAD@{14}: commit (initial): init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim aaa.tx
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim aaa.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git add aaa.txt
+warning: LF will be replaced by CRLF in aaa.txt.
+The file will have its original line endings in your working directory
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git commit -m "init aaa.txt" aaa.txt
+warning: LF will be replaced by CRLF in aaa.txt.
+The file will have its original line endings in your working directory
+[master e3184aa] init aaa.txt
+ 1 file changed, 4 insertions(+)
+ create mode 100644 aaa.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ rm aaa.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ ll
+total 1
+drwxr-xr-x 1 flat 197609  0 May 29 19:40 WeChat/
+-rw-r--r-- 1 flat 197609 38 May 29 22:15 good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    aaa.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git add aaa.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    aaa.txt
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git commit -m "del aaa.txt" aaa.txt
+[master fa69898] del aaa.txt
+ 1 file changed, 4 deletions(-)
+ delete mode 100644 aaa.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git reflog
+fa69898 (HEAD -> master) HEAD@{0}: commit: del aaa.txt
+e3184aa HEAD@{1}: commit: init aaa.txt
+ca68a8b HEAD@{2}: reset: moving to ca68a8b
+60e6ddb HEAD@{3}: reset: moving to HEAD
+60e6ddb HEAD@{4}: reset: moving to 60e6ddb
+60e6ddb HEAD@{5}: reset: moving to 60e6ddb
+ca68a8b HEAD@{6}: commit: t
+516c737 HEAD@{7}: commit: m
+f00c2ff HEAD@{8}: commit: three
+60e6ddb HEAD@{9}: reset: moving to 60e6ddb
+e72d436 HEAD@{10}: reset: moving to e72d436
+60e6ddb HEAD@{11}: reset: moving to 60e6ddb
+60e6ddb HEAD@{12}: reset: moving to HEAD^
+e72d436 HEAD@{13}: reset: moving to e72d436
+60e6ddb HEAD@{14}: reset: moving to 60e6ddb
+e72d436 HEAD@{15}: commit: two edit
+60e6ddb HEAD@{16}: commit (initial): init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git diff good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git diff good.txt
+diff --git a/good.txt b/good.txt
+index 639fe79..9c2db8c 100644
+--- a/good.txt
++++ b/good.txt
+@@ -1,4 +1,4 @@
+-aa
++kkkkaa
+ fffs
+ vfddv
+ kkkki
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$
+
