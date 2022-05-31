@@ -720,6 +720,7 @@ index 639fe79..9c2db8c 100644
 flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
 $
 
+<<<<<<< HEAD
 flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
 $ git status
 On branch master
@@ -1129,3 +1130,41 @@ flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
 $ vim good.txt
 
 flat@DE
+=======
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git remote -v
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git remote add origin https://github.com/xiaoping110/huanshan.git
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git remote -v
+origin  https://github.com/xiaoping110/huanshan.git (fetch)
+origin  https://github.com/xiaoping110/huanshan.git (push)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git push origin master
+Enumerating objects: 42, done.
+Counting objects: 100% (42/42), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (29/29), done.
+Writing objects: 100% (42/42), 6.00 KiB | 613.00 KiB/s, done.
+Total 42 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), done.
+To https://github.com/xiaoping110/huanshan.git
+ * [new branch]      master -> master
+
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/huashanlinghuchong
+$ git clone https://github.com/xiaoping110/huanshan.git
+Cloning into 'huanshan'...
+remote: Enumerating objects: 42, done.
+remote: Counting objects: 100% (42/42), done.
+remote: Compressing objects: 100% (24/24), done.
+remote: Total 42 (delta 5), reused 42 (delta 5), pack-reused 0
+Receiving objects: 100% (42/42), 6.00 KiB | 767.00 KiB/s, done.
+Resolving deltas: 100% (5/5), done.
+
+>>>>>>> origin/master
