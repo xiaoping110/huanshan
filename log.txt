@@ -720,3 +720,412 @@ index 639fe79..9c2db8c 100644
 flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
 $
 
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   good.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        log.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git branch -v
+* master fa69898 del aaa.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git branch test01
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git branch -v
+* master fa69898 del aaa.txt
+  test01 fa69898 del aaa.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git checkout test01
+Switched to branch 'test01'
+M       good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git branch -v
+  master fa69898 del aaa.txt
+* test01 fa69898 del aaa.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git add good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git status
+On branch test01
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   good.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        log.txt
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git commit -m "test init" good.txt
+[test01 d62b0a7] test init
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ cat good.txt
+kkkkaa
+fffs
+vfddv
+kkkki
+llll
+tttt
+edit branch by test01
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git branch -v
+  master fa69898 del aaa.txt
+* test01 d62b0a7 test init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git checkout master
+Switched to branch 'master'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+aa
+fffs
+vfddv
+kkkki
+llll
+tttt
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git checkout test01
+Switched to branch 'test01'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git branch -v
+  master fa69898 del aaa.txt
+* test01 d62b0a7 test init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git checkout master
+Switched to branch 'master'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git branch -v
+* master fa69898 del aaa.txt
+  test01 d62b0a7 test init
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git merge test01
+Updating fa69898..d62b0a7
+Fast-forward
+ good.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git diff
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git checkout test01
+Switched to branch 'test01'
+M       good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git add good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git commit -m "2" good.txt
+[test01 284b068] 2
+ 1 file changed, 1 insertion(+)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git checkout master
+Switched to branch 'master'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git add good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git commit -m "1" good.txt
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        log.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git merge
+fatal: No remote for the current branch.
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git merge test01
+Updating d62b0a7..284b068
+Fast-forward
+ good.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+kkkkaa
+fffs
+vfddv
+kkkki
+llll
+tttt
+edit branch by test01
+2
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git add good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git commit good.txt
+[master 64fc547] 3
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git checkout test01
+Switched to branch 'test01'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ vim good.txt
+
+[1]+  Stopped                 vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ vim good.txt
+
+[No write since last change]
+/usr/bin/bash: q: command not found
+
+shell returned 127
+
+Press ENTER or type command to continue
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git merge master
+Updating 284b068..64fc547
+Fast-forward
+ good.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git add good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git commit good.txt -m "4"
+On branch test01
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .good.txt.swp
+        log.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ delete ^C
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ delete   .good.txt.swp
+bash: delete: command not found
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git rm .good.txt.swp
+fatal: pathspec '.good.txt.swp' did not match any files
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git rm .good.txt.swp
+fatal: pathspec '.good.txt.swp' did not match any files
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ ^C
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git add .
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git commit -m "all"
+[test01 7d686cb] all
+ 2 files changed, 722 insertions(+)
+ create mode 100644 .good.txt.swp
+ create mode 100644 log.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git merge master
+Already up to date.
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ ^C
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ cat good.txt
+kkkkaa
+fffs
+vfddv
+kkkki
+llll
+tttt
+edit branch by test01
+3
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ rm  .good.txt.swp
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git add .
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git status
+On branch test01
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    .good.txt.swp
+
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git commit -m "d"
+[test01 aaebff6] d
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 .good.txt.swp
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git add good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git commit good.txt
+[test01 83b6e1d] 8
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git merge master
+Already up to date.
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git add .
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git commit -m "all"
+[test01 746ab2f] all
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git checkoute master
+git: 'checkoute' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (test01)
+$ git checkout master
+Switched to branch 'master'
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git add .
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git commit -m "sall"
+[master 3146b77] sall
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git merge test01
+Auto-merging good.txt
+CONFLICT (content): Merge conflict in good.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master|MERGING)
+$ ll
+total 25
+drwxr-xr-x 1 flat 197609     0 May 29 19:40 WeChat/
+-rw-r--r-- 1 flat 197609   110 May 30 22:17 good.txt
+-rw-r--r-- 1 flat 197609 21517 May 30 22:17 log.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master|MERGING)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master|MERGING)
+$ cat good.txt
+kkkkaa
+fffs
+vfddv
+kkkki
+llll
+tttt
+edit branch by test01
+11
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master|MERGING)
+$ git add .
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master|MERGING)
+$ git commit -m "merge from master"
+[master 384876f] merge from master
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ cat good.txt
+kkkkaa
+fffs
+vfddv
+kkkki
+llll
+tttt
+edit branch by test01
+11
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DESKTOP-266RI19 MINGW64 ~/Desktop/gittest (master)
+$ vim good.txt
+
+flat@DE
